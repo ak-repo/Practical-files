@@ -1,6 +1,74 @@
 {
-    "blogs":[
-
-    ]
+  "blogs": [
+    {
+      "id": 1,
+      "userId": 101,
+      "title": "Understanding React Redux Basics",
+      "body": "This blog covers the core concepts of Redux, including actions, reducers, and the store.",
+      "createdDate": "2025-08-01T10:15:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 102,
+      "title": "Getting Started with Golang",
+      "body": "An introductory guide to Go programming language for backend development.",
+      "createdDate": "2025-08-02T09:45:00Z"
+    },
+    {
+      "id": 3,
+      "userId": 103,
+      "title": "Why TypeScript is Great for React Apps",
+      "body": "TypeScript improves maintainability and scalability for large React projects.",
+      "createdDate": "2025-08-03T08:30:00Z"
+    },
+    {
+      "id": 4,
+      "userId": 104,
+      "title": "Deploying Django Apps to Production",
+      "body": "Step-by-step guide for deploying Django applications with Nginx and Gunicorn.",
+      "createdDate": "2025-08-04T14:00:00Z"
+    },
+    {
+      "id": 5,
+      "userId": 105,
+      "title": "REST API Best Practices",
+      "body": "Learn the best practices for designing scalable and secure REST APIs.",
+      "createdDate": "2025-08-05T12:20:00Z"
+    },
+    {
+      "id": 6,
+      "userId": 106,
+      "title": "React Hooks Deep Dive",
+      "body": "A detailed explanation of useState, useEffect, and custom hooks.",
+      "createdDate": "2025-08-06T11:10:00Z"
+    },
+    {
+      "id": 7,
+      "userId": 107,
+      "title": "Working with PostgreSQL in Django",
+      "body": "How to integrate PostgreSQL with Django ORM for high-performance applications.",
+      "createdDate": "2025-08-07T15:35:00Z"
+    },
+    {
+      "id": 8,
+      "userId": 108,
+      "title": "State Management with Zustand",
+      "body": "Zustand is a small, fast, and scalable state management library for React.",
+      "createdDate": "2025-08-08T17:00:00Z"
+    },
+    {
+      "id": 9,
+      "userId": 109,
+      "title": "Optimizing Web Performance",
+      "body": "Tips and tricks to improve web app speed and reduce load times.",
+      "createdDate": "2025-08-09T07:50:00Z"
+    },
+    {
+      "id": 10,
+      "userId": 110,
+      "title": "Building a Notion Clone with React and Django",
+      "body": "A walkthrough of creating a Notion-like app using Django REST API and React.",
+      "createdDate": "2025-08-10T09:25:00Z"
+    }
+  ]
 }
-

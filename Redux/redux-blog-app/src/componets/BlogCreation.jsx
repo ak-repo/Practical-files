@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addBlog, deleteBlog, editBlog } from "../redux/reducers/blogSlice";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { fetchBlogs } from "../redux/reducers/blogSlice";
 function BlogCreation() {
   const { blogList } = useSelector((state) => state.blogs);
   const [newBlog, setNewBlog] = useState({
@@ -11,6 +11,13 @@ function BlogCreation() {
   const [selectedBlog, setSelection] = useState(null);
   const [showEditModel, setEditModel] = useState(false);
   const dispatch = useDispatch();
+
+  //fething
+  useEffect(() => {
+    console.log("use");
+
+    dispatch(fetchBlogs());
+  }, []);
 
   //filling
   const handleChange = (e) => {
@@ -88,7 +95,7 @@ function BlogCreation() {
         <h1 className="text-3xl font-bold text-gray-800 mb-6">Latest Posts</h1>
 
         {blogList &&
-          blogList?.map((blog, index) => (
+          blogList.map((blog, index) => (
             <div
               key={blog?.id}
               className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
