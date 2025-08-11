@@ -1,0 +1,14 @@
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'netflix-red': '#E50914',
+      },
+    },
+  },
+  plugins: [],
+}

@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { blogs } from "./reducers/blogSlice";
+import { blogsQuery } from "./rtkBlogsQuery";
+
+//store
 
 const store = configureStore({
   reducer: {
-    blogs,
+    [blogsQuery.reducerPath]: blogsQuery.reducer,
   },
-});
 
+  middleware: (getDefalutMiddleware) =>
+    getDefalutMiddleware().concat(blogsQuery.middleware),
+});
 export default store;

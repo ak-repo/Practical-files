@@ -1,23 +1,20 @@
-import { useSelector, useDispatch } from "react-redux";
-import { addBlog, deleteBlog, editBlog } from "../redux/reducers/blogSlice";
 import { useEffect, useState } from "react";
-import { fetchBlogs } from "../redux/reducers/blogSlice";
+import { useGetBlogsQuery, useAddBlogsMutation } from "../redux/rtkBlogsQuery";
 function BlogCreation() {
-  const { blogList } = useSelector((state) => state.blogs);
   const [newBlog, setNewBlog] = useState({
     title: "",
     body: "",
   });
   const [selectedBlog, setSelection] = useState(null);
   const [showEditModel, setEditModel] = useState(false);
-  const dispatch = useDispatch();
-
-  //fething
-  useEffect(() => {
-    console.log("use");
-
-    dispatch(fetchBlogs());
-  }, []);
+  const {
+    data: blogList = [],
+    isLoading,
+    isError,
+    error,
+    isSuccess,
+  } = useGetBlogsQuery();
+  const [addBlog] = useAddBlogsMutation();
 
   //filling
   const handleChange = (e) => {
@@ -27,14 +24,12 @@ function BlogCreation() {
   //add
   const handleAddtoblogs = (e) => {
     e.preventDefault();
-    dispatch(
-      addBlog({
-        ...newBlog,
-        createdDate: new Date().toISOString(),
-        id: Date.now(),
-        userId: "",
-      })
-    );
+    addBlog({
+      ...newBlog,
+      createdDate: new Date().now,
+      editiedDate: "",
+    });
+
     setNewBlog({ title: "", body: "" });
   };
 
@@ -44,6 +39,9 @@ function BlogCreation() {
     setSelection(blog);
     setEditModel(true);
   };
+
+  if (isLoading) return <p>Loading....</p>;
+  if (isError) return <p>{error}</p>;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
@@ -129,7 +127,7 @@ function BlogCreation() {
                     </svg>
                   </button>
                   <button
-                    onClick={() => dispatch(deleteBlog(blog?.id))}
+                    // onClick={() => dispatch(deleteBlog(blog?.id))}
                     className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-full transition"
                     title="Delete"
                   >
@@ -152,11 +150,7 @@ function BlogCreation() {
           ))}
 
         {showEditModel && (
-          <BlogEditModal
-            blog={selectedBlog}
-            dispatch={dispatch}
-            setEditModel={setEditModel}
-          />
+          <BlogEditModal blog={selectedBlog} setEditModel={setEditModel} />
         )}
       </div>
     </div>
@@ -165,7 +159,7 @@ function BlogCreation() {
 
 export default BlogCreation;
 
-const BlogEditModal = ({ blog, dispatch, setEditModel }) => {
+const BlogEditModal = ({ blog, setEditModel }) => {
   const [editedBlog, setChangeBlog] = useState(blog);
 
   //change
@@ -174,14 +168,7 @@ const BlogEditModal = ({ blog, dispatch, setEditModel }) => {
   };
 
   //submissin
-  const handleSubmit = () => {
-    dispatch(
-      editBlog({
-        ...editedBlog,
-        lastEditied: new Date().toISOString(),
-      })
-    );
-  };
+  const handleSubmit = () => {};
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
