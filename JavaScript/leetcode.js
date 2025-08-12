@@ -1,49 +1,41 @@
-// Given an integer n, return true if it is a power of two. Otherwise, return false.
-
-// An integer n is a power of two, if there exists an integer x such that n == 2x.
-
-// Example 1:
-
-// Input: n = 1
-// Output: true
-// Explanation: 20 = 1
-// Example 2:
-
-// Input: n = 16
-// Output: true
-// Explanation: 24 = 16
-// Example 3:
-
-// Input: n = 3
-// Output: false
-
-var isPowerOfTwo = function (n) {
-  if (n === 1 || n === 2) return true;
-  let value = 2;
-
-  while (value < n) {
-    if (2 ** value === n) {
-      return true;
-    }
-    value++;
+class Calculator {
+  constructor(value) {
+    this.value = value;
   }
-  return false;
-};
 
-var isPowerOfTwo = function (n) {
-  if (n < 1) return false;
-
-  let value = 1;
-  while (value < n) {
-    console.log(value);
-    value *= 2;
+  add(value) {
+    this.value = this.value + value;
+    return this;
   }
-  return value === n;
-};
 
-isPowerOfTwo(32);
-console.log(isPowerOfTwo(32));
-console.log(isPowerOfTwo(32));
+  subtract(value) {
+    this.value = this.value - value;
+    return this;
+  }
 
-console.log(isPowerOfTwo(2**15));
+  multiply(value) {
+    this.value = this.value * value;
+  }
 
+  divide(value) {
+    this.value = this.value / value;
+    return this;
+  }
+
+  power(value) {
+    this.value = this.value ** value;
+    return this;
+  }
+
+  getResult() {
+    return this.value;
+  }
+}
+
+// Input:
+// actions = ["Calculator", "add", "subtract", "getResult"],
+// values = [10, 5, 7]
+// Output: 8
+// Explanation:
+const x =new Calculator(2).power(2).getResult()
+console.log(x);

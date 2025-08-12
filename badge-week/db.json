@@ -1,0 +1,105 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Wireless Bluetooth Headphones",
+      "price": 59.99,
+      "category": "Electronics",
+      "description": "High-quality over-ear headphones with noise cancellation.",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": "2",
+      "name": "Smartwatch Pro",
+      "price": 129.99,
+      "category": "Wearables",
+      "description": "Track your fitness, calls, and notifications with ease.",
+      "inStock": true,
+      "rating": 4.2
+    },
+    {
+      "id": "3",
+      "name": "4K Ultra HD Smart TV",
+      "price": 499.99,
+      "category": "Electronics",
+      "description": "55-inch 4K UHD display with built-in streaming apps.",
+      "inStock": false,
+      "rating": 4.7
+    },
+    {
+      "id": "4",
+      "name": "Gaming Laptop",
+      "price": 899.99,
+      "category": "Computers",
+      "description": "Powerful laptop with RTX graphics and fast SSD storage.",
+      "inStock": true,
+      "rating": 4.6
+    },
+    {
+      "id": "5",
+      "name": "Mechanical Keyboard",
+      "price": 79.99,
+      "category": "Accessories",
+      "description": "RGB backlit mechanical keyboard with tactile switches.",
+      "inStock": true,
+      "rating": 4.4
+    },
+    {
+      "id": "6",
+      "name": "Wireless Mouse",
+      "price": 29.99,
+      "category": "Accessories",
+      "description": "Ergonomic wireless mouse with adjustable DPI.",
+      "inStock": true,
+      "rating": 4.3
+    },
+    {
+      "id": "7",
+      "name": "Portable Bluetooth Speaker",
+      "price": 45.99,
+      "category": "Electronics",
+      "description": "Compact speaker with deep bass and water resistance.",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": "8",
+      "name": "Smart Home Hub",
+      "price": 99.99,
+      "category": "Smart Home",
+      "description": "Control your smart devices from one central hub.",
+      "inStock": false,
+      "rating": 4.1
+    },
+    {
+      "id": "9",
+      "name": "Fitness Tracker Band",
+      "price": 39.99,
+      "category": "Wearables",
+      "description": "Lightweight tracker with heart rate and step counter.",
+      "inStock": true,
+      "rating": 4
+    },
+    {
+      "id": "10",
+      "name": "USB-C Charging Cable",
+      "price": 12.99,
+      "category": "Accessories",
+      "description": "Durable braided cable for fast charging and data transfer.",
+      "inStock": true,
+      "rating": 4.8
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "name": "Wireless Bluetooth Headphones",
+      "price": 59.99,
+      "category": "Electronics",
+      "description": "High-quality over-ear headphones with noise cancellation.",
+      "inStock": true,
+      "rating": 4.5
+    }
+  ]
+}

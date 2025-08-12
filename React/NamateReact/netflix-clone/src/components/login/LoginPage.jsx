@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -7,13 +8,16 @@ import {
 import HeaderPage from "../header/HeaderPage";
 import { checkValidation } from "../../utils/form/validate";
 import { auth } from "../../utils/firebase/firebase";
-
+import { addUser } from "../../utils/redux/Slices/userSlice";
+import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const [isSignInForm, setSignInForm] = useState(true);
   const [error, setError] = useState(null);
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const toggleSignUp = () => {
     setSignInForm(!isSignInForm);
@@ -40,7 +44,7 @@ const LoginPage = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           console.log(error.code);
@@ -55,7 +59,7 @@ const LoginPage = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           console.log(error.code);

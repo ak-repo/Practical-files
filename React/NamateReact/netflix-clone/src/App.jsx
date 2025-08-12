@@ -1,9 +1,11 @@
+import { Provider } from "react-redux";
 import BodyPage from "./components/body/BodyPage";
+import store from "./utils/redux/store";
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <BodyPage />
-    </div>
+    </Provider>
   );
 }
 
