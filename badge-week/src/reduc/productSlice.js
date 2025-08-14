@@ -4,7 +4,6 @@ import axios from "axios";
 const PRODUCTAPI = "http://localhost:3000/products";
 
 //fetching products
-
 export const fetchingProducts = createAsyncThunk(
   "fetching/producst",
   async () => {

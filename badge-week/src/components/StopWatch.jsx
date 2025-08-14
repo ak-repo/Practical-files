@@ -12,7 +12,10 @@ function StopWatch() {
       }, 1000);
     }
 
-    return () => clearInterval(timer);
+    return () => {
+      console.log("intervel cleared");
+      clearInterval(timer);
+    };
   }, [running]);
 
   const start = () => {

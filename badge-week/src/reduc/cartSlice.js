@@ -4,7 +4,6 @@ import axios from "axios";
 const CARTAPI = "http://localhost:3000/cart";
 
 //fetch cart
-
 export const fetchCart = createAsyncThunk("cart/fetch", async () => {
   try {
     const { data } = await axios.get(CARTAPI);
@@ -16,7 +15,6 @@ export const fetchCart = createAsyncThunk("cart/fetch", async () => {
 });
 
 //add to cart
-
 export const addToCart = createAsyncThunk("cart/addToCart", async (cart) => {
   try {
     const { data } = await axios.post(CARTAPI, cart);
@@ -41,16 +39,7 @@ const cartSlice = createSlice({
   initialState: {
     cartList: [],
   },
-  reducers: {
-    // addTocart: (state, action) => {
-    //   state.cartList = [...state.cartList, action.payload];
-    // },
-    // removeCart: (state, action) => {
-    //   state.cartList = state.cartList.filter(
-    //     (item) => item?.id !== action.payload
-    //   );
-    // },
-  },
+  reducers: {},
 
   extraReducers: (builder) => {
     builder
@@ -70,4 +59,3 @@ const cartSlice = createSlice({
 
 export default cartSlice.reducer;
 
-// export const { addTocart, removeCart } = cartSlice.actions;

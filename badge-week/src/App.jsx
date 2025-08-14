@@ -7,6 +7,7 @@ import CartListing from "./components/CartListing";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import StopWatch from "./components/StopWatch";
 import Navbar from "./components/Navbar";
+import HooksTuto from "./components/HooksTuto";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
           <Route path="/cart" element={<CartListing />} />
           <Route path="/stopWatch" element={<StopWatch />} />
+          <Route path="/hooks" element={<HooksTuto />} />
         </Routes>
       </BrowserRouter>
     </Provider>

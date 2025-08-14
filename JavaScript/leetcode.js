@@ -15,11 +15,16 @@ class Calculator {
 
   multiply(value) {
     this.value = this.value * value;
+    return this;
   }
 
   divide(value) {
-    this.value = this.value / value;
-    return this;
+    if (value === 0) {
+      this.value = "Division by zero is not allowed";
+    } else {
+      this.value = this.value / value;
+      return this;
+    }
   }
 
   power(value) {
@@ -31,11 +36,3 @@ class Calculator {
     return this.value;
   }
 }
-
-// Input:
-// actions = ["Calculator", "add", "subtract", "getResult"],
-// values = [10, 5, 7]
-// Output: 8
-// Explanation:
-const x =new Calculator(2).power(2).getResult()
-console.log(x);
