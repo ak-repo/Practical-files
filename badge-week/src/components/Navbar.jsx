@@ -12,8 +12,11 @@ function Navbar() {
       <NavLink to={"/cart"}>
         <button style={{ padding: "10px" }}>Cart</button>
       </NavLink>
-       <NavLink to={"/hooks"}>
+      <NavLink to={"/hooks"}>
         <button style={{ padding: "10px" }}>Hooks</button>
+      </NavLink>
+      <NavLink to={"/counter"}>
+        <button style={{ padding: "10px" }}>Counter</button>
       </NavLink>
     </div>
   );

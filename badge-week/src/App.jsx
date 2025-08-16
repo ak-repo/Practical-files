@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import StopWatch from "./components/StopWatch";
 import Navbar from "./components/Navbar";
 import HooksTuto from "./components/HooksTuto";
+import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<ProductListing />} />
-
+          <Route path="counter" element={<Counter />} />
           <Route path="/cart" element={<CartListing />} />
           <Route path="/stopWatch" element={<StopWatch />} />
           <Route path="/hooks" element={<HooksTuto />} />

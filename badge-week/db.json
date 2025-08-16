@@ -91,5 +91,33 @@
       "rating": 4.8
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "1",
+      "name": "Wireless Bluetooth Headphones",
+      "price": 59.99,
+      "category": "Electronics",
+      "description": "High-quality over-ear headphones with noise cancellation.",
+      "inStock": true,
+      "rating": 4.5
+    },
+    {
+      "id": "2",
+      "name": "Smartwatch Pro",
+      "price": 129.99,
+      "category": "Wearables",
+      "description": "Track your fitness, calls, and notifications with ease.",
+      "inStock": true,
+      "rating": 4.2
+    },
+    {
+      "id": "3",
+      "name": "4K Ultra HD Smart TV",
+      "price": 499.99,
+      "category": "Electronics",
+      "description": "55-inch 4K UHD display with built-in streaming apps.",
+      "inStock": false,
+      "rating": 4.7
+    }
+  ]
 }
