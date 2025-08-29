@@ -1,36 +1,25 @@
+//  Creating a multiplication table with all the elements in the array. So
+// if your array is [2, 3, 7, 8, 10], you first multiply every element by 2,
+// then multiply every element by 3, then by 7, and so on.
+
 package main
 
-import (
-	"fmt"
-	"os"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	if len(os.Args) != 4 {
-		fmt.Println("Usage: calculator <operation> <operand1> <operand2>")
-		return
+
+	x := []int{2, 3, 7, 8, 10}
+
+	table := make([][]int, len(x))
+
+	for i, outerValue := range x {
+		table[i] = make([]int, len(x))
+
+		for j, innerValue := range x {
+			table[i][j] = outerValue * innerValue
+		}
+
 	}
 
-	operator := os.Args[1]
-	operand1, err1 := strconv.Atoi(os.Args[2])
-	operand2, err2 := strconv.Atoi(os.Args[3])
-
-	if err1 != nil || err2 != nil {
-		fmt.Println("Invalid operands")
-		return
-	}
-
-	result := 0
-	switch operator {
-	case "add":
-		result = operand1 + operand2
-	case "sub":
-		result = operand1 - operand2
-	default:
-		fmt.Println("Invalid operation")
-		return
-	}
-
-	fmt.Printf("%d %s %d = %d\n", operand1, operator, operand2, result)
+	fmt.Println("ta: ", table)
 }

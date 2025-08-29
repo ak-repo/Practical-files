@@ -6,22 +6,19 @@ func main() {
 
 	// single linkelist accessing
 
+	// 	Input: l1 = [2,4,3], l2 = [5,6,4]
+	// Output: [7,0,8]
 	var sList LinkedList
 	sList.Append(2)
-	sList.Append(5)
-	sList.Append(5)
-	sList.Append(10)
-	sList.Append(15)
-	sList.Append(15)
-	sList.Append(15)
-	sList.Append(20)
-	sList.Append(20)
-	sList.Append(20)
-	sList.Display()
-	fmt.Println("len", sList.Length)
+	sList.Append(4)
+	sList.Append(3)
 
-	// removeDupli(&sList)
-	// sList.Display()
+	var sl LinkedList
+	sl.Append(5)
+	sl.Append(6)
+	sl.Append(4)
+
+
 
 	//----------------------------------------------------------------------------------------
 
@@ -44,10 +41,13 @@ func main() {
 
 // remove sList duplicate elements,, it only work when same elements are in grouped together
 
-func removeDupli(list *LinkedList) {
+func removeDuplicates(list *LinkedList) {
 
 	var prev *Node = list.Head
 	var current *Node = list.Head.Next
+	if prev == nil || current == nil {
+		return
+	}
 
 	for current != nil {
 
@@ -62,9 +62,21 @@ func removeDupli(list *LinkedList) {
 
 	}
 
-	if list.Head.Data == list.Tail.Data {
-		fmt.Println("true")
-		list.Tail = nil
+	//fix the tail pointer
+
+	temp := list.Head
+	for temp != nil && temp.Next != nil {
+		temp = temp.Next
 	}
 
+	list.Tail = temp
+
 }
+
+// reversing linkedlist
+
+func reverseLinkedlist(list *LinkedList) {
+	
+
+}
+
