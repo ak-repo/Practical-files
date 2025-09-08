@@ -73,6 +73,7 @@ func handleGetOneCourse(writer http.ResponseWriter, request *http.Request) {
 		}
 	}
 	// not found
+	writer.WriteHeader(http.StatusNotFound)
 	json.NewEncoder(writer).Encode("No course found given id")
 
 }
@@ -84,6 +85,8 @@ func handleCreateCourse(writer http.ResponseWriter, request *http.Request) {
 
 	//check body is empty
 	if request.Body == nil {
+		writer.WriteHeader(http.StatusNotFound)
+
 		json.NewEncoder(writer).Encode("Please sent some data")
 		return
 	}
@@ -92,6 +95,8 @@ func handleCreateCourse(writer http.ResponseWriter, request *http.Request) {
 	var course Course
 	_ = json.NewDecoder(request.Body).Decode(&course)
 	if course.IsEmpty() {
+		writer.WriteHeader(http.StatusNotFound)
+
 		json.NewEncoder(writer).Encode("Please sent some data")
 		return
 	}
@@ -155,6 +160,8 @@ func handleDeleteCourse(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	//not found
+	writer.WriteHeader(http.StatusNotFound)
+
 	json.NewEncoder(writer).Encode("something went wrong! course not found")
 }
 
