@@ -40,7 +40,7 @@ func handlePostRequest() {
 
 // get
 
-func handleGetResponse() {
+func handleGetRequest() {
 	const myURL = "http://localhost:8000/get"
 
 	response, err := http.Get(myURL)
@@ -49,7 +49,6 @@ func handleGetResponse() {
 	defer response.Body.Close()
 
 	//read method two
-
 	context, err := io.ReadAll(response.Body)
 	checkError(err)
 	fmt.Println("Get request response: ", string(context))
@@ -59,5 +58,5 @@ func handleGetResponse() {
 func main() {
 
 	handlePostRequest()
-	handleGetResponse()
+	handleGetRequest()
 }
