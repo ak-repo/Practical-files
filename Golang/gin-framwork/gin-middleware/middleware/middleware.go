@@ -11,7 +11,6 @@ import (
 func Authenticate() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		token := c.GetHeader("Authorization")
-		// log.Fatal(token)
 		if token != "Bearer secret123" {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{
 				"error": "unauthorised entry",
