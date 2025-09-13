@@ -32,7 +32,6 @@ var Count int
 
 func QuickSort(arr []int) []int {
 
-	Count++
 
 	if len(arr) < 2 {
 		return arr
