@@ -1,0 +1,41 @@
+
+
+
+jwt-gin-postgres/
+├── cmd/                    # Application entry points
+│   └── main.go            # Main application file
+├── internal/              # Private application code
+│   ├── config/           # Configuration management
+│   │   └── config.go     # App configuration
+│   ├── database/         # Database interactions
+│   │   └── postgres.go   # PostgreSQL connection and queries
+│   ├── handlers/         # HTTP request handlers
+│   │   └── auth.go       # Authentication endpoints
+│   ├── middleware/       # HTTP middleware
+│   │   └── auth.go       # JWT verification middleware
+│   ├── models/           # Data models
+│   │   └── user.go       # User model and validations
+│   └── utils/            # Helper functions
+│       └── password.go   # Password hashing utilities
+├── .env                  # Env variable
+└── go.mod                # Go module definition
+
+
+
+
+Client ---> API Request (access token)
+            |
+            | Access token valid?
+            | Yes --> API responds 200 OK
+            | No  --> API responds 401 Unauthorized
+            v
+Client detects 401 --> Calls /refresh with refresh token
+            |
+            v
+Server validates refresh token
+            |
+            v
+New access token issued
+            |
+            v
+Client retries original API request with new access token
